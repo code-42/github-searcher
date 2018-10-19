@@ -1,5 +1,9 @@
-<<<<<<< HEAD
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+
+reference videos:
+https://www.youtube.com/watch?v=pCgDRgmfilE
+https://www.youtube.com/watch?v=ZXlnG-rknFs&list=PLLDNgndR69WeeHFoEg3-WG-mohPDXqZ2f&index=7
+
 
 Below you will find some information on how to perform common tasks.<br>
 You can find the most recent version of this guide [here](https://github.com/facebook/create-react-app/blob/master/packages/react-scripts/template/README.md).
@@ -2570,4 +2574,3 @@ If you have ideas for more “How To” recipes that should be on this page, [le
 This is a github search util written in React
 source https://www.youtube.com/watch?v=kJeXr1K3nyg&list=PLLDNgndR69WeeHFoEg3-WG-mohPDXqZ2f&index=1
 
->>>>>>> f73bb8e0d624bbbeea1870380a8ee8731f62b6dc
