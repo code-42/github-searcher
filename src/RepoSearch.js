@@ -5,7 +5,7 @@ function RepoSearch(props){
     return(
         <div>
             <h1>Repo Search</h1>
-            <input value={props.inputValue}/>
+            <input value={props.inputValue} onChange={props.handleInputChange}/>
             <ul>
                 <li>repo1</li>
                 <li>repo2</li>
@@ -23,7 +23,8 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => {
     return{
         handleInputChange:(evt) => {
-            console.log('handleInputChange() fired')
+            console.log('handleInputChange() fired');
+            dispatch({type: 'SEARCH_INPUT_CHANGE', value: evt.target.value});
         }
     }
 }

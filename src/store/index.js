@@ -7,7 +7,15 @@ const initialState = {
 
 const reducer = (state = initialState, action) => {
     console.log('reducer', action);
-    return state;
+
+    switch (action.type) {
+        case 'SEARCH_INPUT_CHANGE':
+            return Object.assign({}, state, {searchInputValue: action.value});
+        default:
+            return state;
+    }
+
+
 }
 
 const store = createStore(reducer);
