@@ -2,7 +2,7 @@ import { createStore } from 'redux';
 
 const initialState = {
     repos: [],
-    searchInputValue: ''
+    searchInputValue: 'default'
 };
 
 const reducer = (state = initialState, action) => {
