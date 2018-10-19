@@ -20,4 +20,12 @@ const mapStateToProps = (state) => {
     }
 }
 
-export default connect(mapStateToProps)(RepoSearch);
+const mapDispatchToProps = (dispatch) => {
+    return{
+        handleInputChange:(evt) => {
+            console.log('handleInputChange() fired')
+        }
+    }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(RepoSearch);
