@@ -2,6 +2,7 @@ import React from 'react';
 import {connect} from 'react-redux';
 import Api from './Api';
 console.log('api?', Api);
+import axios from 'axios';
 
 function RepoSearch(props){
     return(
