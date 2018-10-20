@@ -1,7 +1,6 @@
 import React from 'react';
 import {connect} from 'react-redux';
 import Api from './Api';
-console.log('api?', Api);
 import axios from 'axios';
 
 function RepoSearch(props){
@@ -35,7 +34,14 @@ const mapDispatchToProps = (dispatch) => {
         },
         handleSubmit: (evt, query) => {
             evt.preventDefault();
-            Api.getRepos(dispatch, query);
+            // Api.getRepos(dispatch, query);
+
+            // Make a request for a github query
+            axios.get('/user?ID=12345')
+                .then(function (response) {
+                    // handle success
+                    console.log(response);
+                })
         }
     }
 }
