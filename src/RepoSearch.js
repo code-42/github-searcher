@@ -1,5 +1,7 @@
 import React from 'react';
 import {connect} from 'react-redux';
+import Api from './Api';
+console.log('api?', Api);
 
 function RepoSearch(props){
     return(
@@ -32,16 +34,7 @@ const mapDispatchToProps = (dispatch) => {
         },
         handleSubmit: (evt) => {
             evt.preventDefault();
-            let query = 'steak';
-            fetch(`https://api.github.com/search/repositories?q=${query}`)
-                .then((response) => {
-                    return response.json();
-                })
-                .then((data) => {
-                    console.log('do we get data??', data);
-                    dispatch({type: 'SET_REPOS', repos: data.items});
-                });
-            console.log('submit');
+            Api.getRepos(dispatch);
         }
     }
 }
