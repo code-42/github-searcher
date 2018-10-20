@@ -25,5 +25,6 @@ function getReposAxios(dispatch, query){
 }
 
 export default {
-    getRepos
+    getRepos,
+    getAxios
 }

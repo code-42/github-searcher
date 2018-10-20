@@ -35,14 +35,8 @@ const mapDispatchToProps = (dispatch) => {
         handleSubmit: (evt, query) => {
             evt.preventDefault();
             // Api.getRepos(dispatch, query);
+            Api.getReposAxios(dispatch, query);
 
-            // Make a request for a github query
-            axios.get(`https://api.github.com/search/repositories?q=${query}`)
-                .then(function (response) {
-                    // handle success
-                    console.log(response);
-                    dispatch({type: 'SET_REPOS', repos: response.data.items});
-                })
         }
     }
 }
