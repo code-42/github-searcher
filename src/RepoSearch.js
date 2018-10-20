@@ -7,7 +7,7 @@ function RepoSearch(props){
     return(
         <div>
             <h1>Repo Search</h1>
-            <form onSubmit={props.handleSubmit}>
+            <form onSubmit={(evt) => props.handleSubmit(evt, props.inputValue)}>
                 <input value={props.inputValue} onChange={props.handleInputChange}/>
             </form>
             <ul>
@@ -32,9 +32,9 @@ const mapDispatchToProps = (dispatch) => {
             console.log('handleInputChange() fired');
             dispatch({type: 'SEARCH_INPUT_CHANGE', value: evt.target.value});
         },
-        handleSubmit: (evt) => {
+        handleSubmit: (evt, query) => {
             evt.preventDefault();
-            Api.getRepos(dispatch);
+            Api.getRepos(dispatch, query);
         }
     }
 }
