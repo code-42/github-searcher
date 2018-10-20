@@ -2,7 +2,7 @@ import { createStore } from 'redux';
 
 const initialState = {
     repos: [],
-    searchInputValue: 'default'
+    searchInputValue: ''
 };
 
 const reducer = (state = initialState, action) => {
@@ -11,6 +11,8 @@ const reducer = (state = initialState, action) => {
     switch (action.type) {
         case 'SEARCH_INPUT_CHANGE':
             return Object.assign({}, state, {searchInputValue: action.value});
+        case 'SET_REPOS':
+            return Object.assign({},state, {repos: action.repos});
         default:
             return state;
     }

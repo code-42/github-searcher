@@ -5,10 +5,13 @@ function RepoSearch(props){
     return(
         <div>
             <h1>Repo Search</h1>
-            <input value={props.inputValue} onChange={props.handleInputChange}/>
+            <form onSubmit={props.handleSubmit}>
+                <input value={props.inputValue} onChange={props.handleInputChange}/>
+            </form>
             <ul>
-                <li>repo1</li>
-                <li>repo2</li>
+                {props.repos.map((repo) => {
+                    return <li key={repo.id}><a href={repo.html_url}>{repo.name}</a></li>
+                })}
             </ul>
         </div>
     );
@@ -16,7 +19,8 @@ function RepoSearch(props){
 
 const mapStateToProps = (state) => {
     return{
-        inputValue: state.searchInputValue
+        inputValue: state.searchInputValue,
+        repos: state.repos
     }
 }
 
@@ -25,6 +29,19 @@ const mapDispatchToProps = (dispatch) => {
         handleInputChange:(evt) => {
             console.log('handleInputChange() fired');
             dispatch({type: 'SEARCH_INPUT_CHANGE', value: evt.target.value});
+        },
+        handleSubmit: (evt) => {
+            evt.preventDefault();
+            let query = 'steak';
+            fetch(`https://api.github.com/search/repositories?q=${query}`)
+                .then((response) => {
+                    return response.json();
+                })
+                .then((data) => {
+                    console.log('do we get data??', data);
+                    dispatch({type: 'SET_REPOS', repos: data.items});
+                });
+            console.log('submit');
         }
     }
 }
