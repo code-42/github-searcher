@@ -1,4 +1,4 @@
-import axios from "axios";
+import axios from 'axios';
 
 
 function getRepos(dispatch, query) {
@@ -26,5 +26,5 @@ function getReposAxios(dispatch, query){
 
 export default {
     getRepos,
-    getAxios
+    getReposAxios
 }
